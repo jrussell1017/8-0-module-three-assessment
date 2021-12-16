@@ -12,7 +12,7 @@ function App() {
       <div>
         {/* Navbar */}
         <nav>
-          <Link to="/">Home</Link>
+          <Link to="/"><img src={"./logo"} alt="home page link"/></Link>
           <Link to="/movies">Movies</Link>
           <Link to="/people">People</Link>
           <Link to="/locations">Locations</Link>
