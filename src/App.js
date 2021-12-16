@@ -6,13 +6,14 @@ import People from "./components/People";
 import Locations from "./components/Locations";
 
 
+
 function App() {
   return (
     <Router>
       <div>
         {/* Navbar */}
         <nav>
-          <Link to="/"><img src={"./logo"} alt="home page link"/></Link>
+          <Link to="/"><img src={"./logo"} /></Link>
           <Link to="/movies">Movies</Link>
           <Link to="/people">People</Link>
           <Link to="/locations">Locations</Link>
