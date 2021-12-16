@@ -7,6 +7,7 @@ class People extends Component {
       characterData: [],
       userInput: "",
       display: false,
+      selectedCharcater: "",
     };
   }
 
@@ -30,14 +31,14 @@ class People extends Component {
   };
 
   handleSubmit = (e) => {
-      e.preventDefault();
-      let characterMatch = this.state.characterData.find((character) => {
-          return character.name === this.state.userInput
-        })
-      this.setState({
-          userInput: characterMatch,
-          display: true
-      })
+    e.preventDefault();
+    let characterMatch = this.state.characterData.find((character) => {
+      return character.name === this.state.userInput;
+    });
+    this.setState({
+      userInput: characterMatch,
+      display: true,
+    });
   };
 
   componentDidMount() {
@@ -55,20 +56,23 @@ class People extends Component {
             placeholder="Find your Person"
             onChange={this.handleUserInput}
           />
-          <button type="submit" onClick={this.handleSubmit}>Submit</button>
+          <button type="submit" onClick={this.handleSubmit}>
+            Submit
+          </button>
         </form>
-        {this.state.display ? 
-            <div>
-                Name: {this.state.userInput.name}
-                <br />
-                Age: {this.state.userInput.age}
-                <br />
-                Gender: {this.state.userInput.gender}
-            </div> : ""
-        }
+        {this.state.display ? (
+          <div>
+            Name: {this.state.userInput.name}
+            <br />
+            Age: {this.state.userInput.age}
+            <br />
+            Gender: {this.state.userInput.gender}
+          </div>
+        ) : (
+          "Not Found"
+        )}
       </div>
     );
   }
 }
-
 export default People;

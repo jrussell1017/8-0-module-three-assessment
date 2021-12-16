@@ -30,7 +30,7 @@ class Movies extends Component {
 
     this.setState({
       userSelection: foundMovie,
-      display: true
+      display: true,
     });
   };
 
@@ -48,12 +48,12 @@ class Movies extends Component {
     });
     return (
       <div className="movies">
-        <div>Select A Movie</div>
+        <h1>Select a Movie</h1>
         <select onChange={this.handleChange}>
           <option value="default"></option>
           {movieTitles}
         </select>
-        {this.state.display ? 
+        {this.state.display ? (
           <div>
             <h3>Title: {this.state.userSelection.title}</h3>
             <ul>
@@ -63,8 +63,10 @@ class Movies extends Component {
                 Description: {this.state.userSelection.description}
               </li>
             </ul>
-          </div> : ""
-        }
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     );
   }
